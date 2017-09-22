@@ -1,6 +1,3 @@
-/**
- * Created by tanyangfang on 2017/1/22.
- */
 
 //var cssResponse = document.createElement('style');
 //document.documentElement.firstElementChild.appendChild(cssResponse);
