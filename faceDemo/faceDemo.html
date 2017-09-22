@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论插入表情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <meta name="apple-touch-fullscreen" content="no">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <script src="js/response.js"></script>
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <h1 class="title">文本框（评论）插入表情Demo</h1>
+
+    <div class="inputBox">
+        <div class="fakeTextarea" id="reditor" contenteditable="true" data-placeholder="我要回复...(80个字以内)">
+        </div>
+        <div class="btnBox clear">
+            <a id="faceBtn"></a>
+            <button onclick="submitCommit()">回复</button>
+        </div>
+        <div class="faceBox " id="faceBox"></div>
+    </div>
+
+    <div class="reply">
+        <h2>评论</h2>
+    </div>
+
+
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wapQQface.js"></script>
+    <script>
+        $(function(){
+//            全部默认参数，故调用不带参数
+            $('#faceBtn').facePackage();
+        });
+
+        // 回复内容展示示，仅供交互，可忽略
+        function submitCommit(){
+            if($.trim($('#reditor').html())!==""){
+                $('.reply').append('<div class="item">'+$('#reditor').html()+'</div>');
+                $('#reditor').html("");
+            }
+        }
+    </script>
+</body>
+</html>
